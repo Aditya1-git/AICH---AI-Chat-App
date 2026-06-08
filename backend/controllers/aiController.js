@@ -10,7 +10,11 @@ export const getAiMessages = async (req, res) => {
         }).sort({ createdAt: 1 });
         res.status(200).json(messages);
     } catch (err) {
-        console.log("Get ai message error", err);
+        console.error("STATUS:", err.status);
+        console.error("MESSAGE:", err.message);
+        console.error("ERROR:", err.error);
+        console.error("RESPONSE:", err.response?.data);
+        console.error(err);
         res.status(500).json({ status: false, message: "failed to fetch Ai messages" })
     }
 }
