@@ -1,0 +1,13 @@
+{
+  "name": "aich",
+  "version": "1.0.0",
+  "description": "This repository contains a simple chat application with a Node/Express backend and a React frontend. This README documents what exists in the codebase today — the features you have implemented, how the parts work, and how to run and extend the project.",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "npm run start --prefix backend"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

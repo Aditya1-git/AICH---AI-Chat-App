@@ -14,8 +14,12 @@ import {Toaster} from "react-hot-toast"
 import { useThemeStore } from './store/useThemeStore'
 
 const App = () => {
-  const { authUser , checkAuth  , isCheckingAuth} = useAuthStore();
+  const { authUser , checkAuth  , isCheckingAuth , onlineUsers } = useAuthStore();
   const { theme } = useThemeStore();
+
+  useEffect(() => {
+    console.log({ onlineUsers });
+  }, [onlineUsers]);
 
   useEffect(() => {
     checkAuth();
@@ -29,7 +33,7 @@ const App = () => {
   )
 
   return (
-    <div data-theme={theme}>
+    <div data-theme={theme} className="min-h-screen overflow-hidden">
       <Navbar/>
 
       <Routes>
