@@ -6,7 +6,7 @@ import messageRoute from "./routes/messageRoute.js"
 import aiRoute from "./routes/aiRoute.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
-import { app , server } from "./lib/socket.js";
+import { app, server } from "./lib/socket.js";
 import path from "path";
 
 
@@ -31,12 +31,12 @@ app.use("/api/auth", authRoute);
 app.use("/api/message", messageRoute);
 app.use("/api/ai", aiRoute);
 
-if(process.env.NODE_ENV === "production"){
-    app.use(express.static(path.join(__dirname,"../frontend/dist")));
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, "frontend", "dist")));
 
-    app.get("*",(req,res)=>{
+    app.use((req, res) => {
         res.sendFile(
-            path.join(__dirname,"../frontend","dist","index.html")
+            path.join(__dirname, "frontend", "dist", "index.html")
         );
     });
 }
