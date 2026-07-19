@@ -38,7 +38,6 @@ const AiChatContainer = () => {
   };
 
   return (
-    /* FIX: Changed parent to max-h-full h-full so it fills the dynamic flex column exactly */
     <div className="h-full max-h-full w-full flex flex-col bg-base-100 overflow-hidden relative">
 
       {/* Header */}
@@ -60,7 +59,6 @@ const AiChatContainer = () => {
       </div>
 
       {/* Messages Feed */}
-      {/* FIX: overflow-y-auto ensures scrolling works exclusively inside this scroll pane */}
       <div className="flex-1 overflow-y-auto p-4 space-y-4 min-h-0 container-snap">
         {messages.length === 0 && (
           <div className="text-center text-base-content/50 mt-10">
@@ -126,7 +124,7 @@ const AiChatContainer = () => {
       </div>
 
       {/* Input */}
-      <div className="border-t border-base-300 p-3 bg-base-100 flex-shrink-0">
+      {/* <div className="border-t border-base-300 p-3 bg-base-100 flex-shrink-0">
         <form
           onSubmit={handleSubmit}
           className="flex gap-2 items-center"
@@ -148,7 +146,7 @@ const AiChatContainer = () => {
             <Send className="size-4" />
           </button>
         </form>
-      </div>
+      </div> */}
 
     </div>
   );
